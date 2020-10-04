@@ -5,6 +5,8 @@
 @section('content')
   @include('nav')
   <div class="container">
+    <div class="row">
     @include('articles.card')
+    </div>
   </div>
 @endsection

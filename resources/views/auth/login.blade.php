@@ -25,8 +25,12 @@
                     <input type="text" class="form-control" id="password" required name="password">
                 </div>
                 <input type="hidden" id="remember" name="remember" value="on">
+                <div class="text-left">
+                <a href="{{ route('password.request') }}" class="card-text">パスワードを忘れた方</a>
+              </div>
                 <button class="btn btn-block blue-gradient mt-2 mb-2" type="submit">ログイン</button>
               </form>
+              
               <div class="mt-0">
                 <a href="{{ route('register') }}" class="card-text">ユーザー登録はこちら</a>
               </div>
