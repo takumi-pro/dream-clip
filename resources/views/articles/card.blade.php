@@ -16,7 +16,7 @@
             <i class="fas fa-ellipsis-v"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="{{ route("articles.edit", ['article' => $article]) }}">
+            <a class="dropdown-item" href="{{ route('articles.edit', ['article' => $article]) }}">
               <i class="fas fa-pen mr-1"></i>記事を更新する
             </a>
             <div class="dropdown-divider"></div>
@@ -63,6 +63,12 @@
     </h3>
     <div class="card-text">
       {{ $article->body }}
+    </div>
+  </div>
+  <div class="card-body pt-0 pb-2 pl-3">
+    <div class="card-text">
+      <article-like>
+      </article-like>
     </div>
   </div>
 </div>
