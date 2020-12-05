@@ -11,4 +11,10 @@
       いいね
     </a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link text-muted"
+       href="{{ route('users.likes', ['name' => $user->name]) }}">
+      宣言
+    </a>
+  </li>
 </ul>

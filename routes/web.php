@@ -32,9 +32,14 @@ Route::prefix('users')->name('users.')->group(function(){
     Route::get('/{name}/likes','UserController@likes')->name('likes');
     Route::get('/{name}/followings', 'UserController@followings')->name('followings');
     Route::get('/{name}/followers', 'UserController@followers')->name('followers');
+    //Route::get('/profedit','UserController@profeditForm')->name('profedit');
     Route::middleware('auth')->group(function(){
         Route::put('/{name}/follow','UserController@follow')->name('follow');
         Route::delete('/{name}/follow','UserController@unfollow')->name('unfollow');
     });
 });
-Route::get('/declare','DeclareController@showDeclaration')->name('declare');
+Route::get('/declaration','DeclarationController@show')->name('declaration');
+Route::get('/declaration/create','DeclarationController@create')->name('declaration.create');
+Route::post('/declaration/create','DeclarationController@store')->name('declaration.store');
+
+Route::get('/profedit','UserController@profeditForm')->name('profedit');

@@ -1,4 +1,4 @@
-<div class="">
+
 
 <div class="card mb-3">
   <div class="card-body d-flex flex-row">
@@ -88,7 +88,7 @@
       <div class="card-body pt-0 pb-4 pl-3">
         <div class="card-text line-height">
     @endif
-          <a href="{{ route('tags.show',['name' => $tag->name]) }}" class="border p-1 mr-1 mt-1 text-muted">
+          <a href="{{ route('tags.show',['name' => $tag->name]) }}" style="border: 1px solid #4ccab8;color:#4ccab8;" class="p-1 mr-1 mt-1">
             {{ $tag->hashtag }}
           </a>
     @if($loop->last)
@@ -97,4 +97,4 @@
     @endif
   @endforeach
 </div>
-</div>
+

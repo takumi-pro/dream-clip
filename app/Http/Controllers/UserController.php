@@ -7,6 +7,10 @@ use App\User;
 
 class UserController extends Controller
 {
+    public function profeditForm(){
+        return view('users.profedit');
+    } 
+
     public function show(string $name){
         $user = User::where('name',$name)->first();
         $articles = $user->articles->sortByDesc('created_at');

@@ -60,8 +60,8 @@ export default {
 <style lang="css">
   .vue-tags-input .ti-tag {
     background: transparent;
-    border: 1px solid #747373;
-    color: #747373;
+    border: 1px solid #4ccab8;
+    color: #4ccab8;;
     margin-right: 4px;
     border-radius: 0px;
     font-size: 13px;

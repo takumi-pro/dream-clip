@@ -4,9 +4,11 @@
 
 @section('content')
   @include('nav')
-  <div class="container">
+  <div class="container py-4">
     <div class="row">
-    @include('articles.card')
+      <div class="col-md-10 offset-md-1">
+        @include('articles.card')
+      </div>  
     </div>
   </div>
 @endsection

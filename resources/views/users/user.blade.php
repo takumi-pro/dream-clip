@@ -1,6 +1,6 @@
 <div class="card mt-0">
     <div class="card-body">
-        <div class="d-flex flex-row">
+        <div class="d-flex flex-row justify-content-between">
           <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark">
             <i class="fas fa-user-circle fa-3x"></i>
           </a>
@@ -12,7 +12,9 @@
               endpoint="{{ route('users.follow',['name' => $user->name]) }}"
             >
             </follow-button>
-          @endif
+            @elseif( Auth::id() === $user->id )
+              <a href="{{ route('profedit') }}" style="height:30px;line-height:30px;font-size:14px;" class="px-3 text-primary border border-primary rounded-pill mt-2">プロフィール編集</a>
+            @endif
         </div>
         <h2 class="h5 card-title m-0">
           <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark">
@@ -22,7 +24,7 @@
     </div>
     <div class="card-body">
         <div class="card-text">
-          <a href="{{ route('users.followings', ['name' => $user->name]) }}" class="text-muted">
+          <a href="{{ route('users.followings', ['name' => $user->name]) }}" class="text-muted mr-2">
             {{ $user->count_followings }} フォロー
           </a>
           <a href="{{ route('users.followers', ['name' => $user->name]) }}" class="text-muted">

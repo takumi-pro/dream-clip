@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-dark sunny-morning-gradient">
+<nav class="navbar navbar-expand navbar-dark blue-gradient">
 <div class="container">
 <a class="navbar-brand" href="/"><i class="fab fa-mdb"></i>DreamClip</a>
 

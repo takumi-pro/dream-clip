@@ -5,27 +5,22 @@
 @section('content')
   @include('nav')
   <div class="container py-4">
+  @include('fixed_dec')
     <div class="row">
         <div class="col-md-10 offset-md-1">
-            <div class="card mb-3">
-                <div class="card-body">
-                  <h2 class="h4 card-title m-0 text-center">宣言</h2>
-                </div>
-            </div>
             <div class="row">
               @foreach($declarations as $declaration)
                 <div class="col-md-12">
                     <div class="card mb-3">
-                        <div class="card-body d-flex flex-row">
+                        <div class="card-body d-flex flex-row sunny-morning-gradient">
                             <a href="" class="text-dark">
                                 <i class="fas fa-user-circle fa-3x mr-1"></i>
                             </a>
                         <div>
-                        
-                        <div class="font-weight-bold">
-                            <a href="" class="text-dark">taku</a>
+                        <div class="">
+                            <a href="{{ route('users.show', ['name' => $declaration->user->name]) }}" class="font-weight-bold text-dark d-inline-block">{{ $declaration->user->name }}</a><span>さんの宣言</span>
                         </div>
-                        <div class="font-weight-lighter">20200929</div>
+                        
                     </div>
                     <!-- dropdown -->
                     <div class="ml-auto card-text">
@@ -71,12 +66,13 @@
                     </div>
                     <!-- modal -->
                     </div>
-                    <div class="card-body pt-0">
+                    <div class="card-body">
                         <h3 class="h4 card-title">
                         <a class="text-dark d-block" href="">
                             {{ $declaration->title }}
                         </a>
                         </h3>
+                        <p class="text-right text-muted m-0">宣言期限：<span class="text-primary">{{ $declaration->deadline->format('Y年m月d日') }}</span></p>
                         
                     </div>
                  </div>
