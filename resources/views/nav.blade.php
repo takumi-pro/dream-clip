@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand navbar-dark aqua-gradient">
-
-  <a class="navbar-brand" href="/"><i class="far fa-sticky-note mr-1"></i>memo</a>
+<nav class="navbar navbar-expand navbar-dark sunny-morning-gradient">
+<div class="container">
+<a class="navbar-brand" href="/"><i class="fab fa-mdb"></i>DreamClip</a>
 
   <ul class="navbar-nav ml-auto">
     @guest
@@ -46,5 +46,7 @@
     <!-- Dropdown -->
     @endauth
   </ul>
+</div>
+  
 
 </nav>
