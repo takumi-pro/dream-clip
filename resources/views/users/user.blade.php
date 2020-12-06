@@ -13,14 +13,18 @@
             >
             </follow-button>
             @elseif( Auth::id() === $user->id )
-              <a href="{{ route('profedit') }}" style="height:30px;line-height:30px;font-size:14px;" class="px-3 text-primary border border-primary rounded-pill mt-2">プロフィール編集</a>
-            @endif
+              <a href="" style="height:30px;line-height:30px;font-size:14px;" class="px-3 text-primary border border-primary rounded-pill mt-2">プロフィール編集</a>
+          @endif 
+          
         </div>
         <h2 class="h5 card-title m-0">
           <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark">
             {{ $user->name }}
           </a>
         </h2>
+        <p class="mt-3 mb-0">
+          {{ $user->comment }}
+        </p>
     </div>
     <div class="card-body">
         <div class="card-text">

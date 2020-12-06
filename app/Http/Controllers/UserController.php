@@ -7,17 +7,29 @@ use App\User;
 
 class UserController extends Controller
 {
-    public function profeditForm(){
-        return view('users.profedit');
+    public function profeditForm(string $name){
+        $user = User::where('name',$name)->first();
+        return view('users.profedit',['user' => $user]);
     } 
+
+    public function profedit(Request $request,string $name){
+        User::where('name',$name)->update([
+            'name' => $request->name,
+            'comment' => $request->comment
+        ]);
+
+        return redirect()->route('users.show');
+    }
 
     public function show(string $name){
         $user = User::where('name',$name)->first();
         $articles = $user->articles->sortByDesc('created_at');
+        $declaration = $user->declarations->sortByDesc('created_at');
         $article_likes = $user->likes->sortByDesc('created_at');
         return view('users.show',[
             'user' => $user,
             'articles' => $articles,
+            'declarations' => $declaration,
             'article_likes' => $article_likes,
         ]);   
     }
@@ -25,10 +37,24 @@ class UserController extends Controller
     public function likes(string $name){
         $user = User::where('name',$name)->first();
         $articles = $user->likes->sortByDesc('created_at');
+        $declaration = $user->declarations->sortByDesc('created_at');
 
         return view('users.likes',[
             'user' => $user,
             'articles' => $articles,
+            'declarations' => $declaration,
+        ]);
+    }
+
+    public function declarations(string $name){
+        $user = User::where('name',$name)->first();
+        $articles = $user->likes->sortByDesc('created_at');
+        $declaration = $user->declarations->sortByDesc('created_at');
+
+        return view('users.declarations',[
+            'user' => $user,
+            'articles' => $articles,
+            'declarations' => $declaration,
         ]);
     }
 

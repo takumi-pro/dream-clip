@@ -49,4 +49,10 @@ class DeclarationController extends Controller
         
         return redirect()->route('declaration');
     }
+
+    public function destroy(Declaration $declaration){
+        $declaration->delete();
+
+        return redirect()->route('declaration');
+    }
 }

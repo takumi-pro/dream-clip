@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-md-10 offset-md-1">
       　　@include('users.user')
-      　　@include('users.tabs', ['hasArticles' => true, 'hasLikes' => false])    
+      　　@include('users.tabs', ['hasArticles' => true, 'hasLikes' => false,'hasDeclarations' => false])    
         <div class="row">
           <div class="col-md-12">
             @foreach($articles as $article)

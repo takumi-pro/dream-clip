@@ -29,10 +29,8 @@
                                 <i class="fas fa-ellipsis-v"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="">
-                                <i class="fas fa-pen mr-1"></i>記事を更新する
-                                </a>
-                                <div class="dropdown-divider"></div>
+                                
+                                
                                 <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-1">
                                 <i class="fas fa-trash-alt mr-1"></i>記事を削除する
                                 </a>
@@ -50,7 +48,7 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <form method="POST" action="">
+                                <form method="POST" action="{{ route('declaration.destroy',['declaration' => $declaration]) }}">
                                     @csrf
                                     @method('DELETE')
                                     <div class="modal-body">

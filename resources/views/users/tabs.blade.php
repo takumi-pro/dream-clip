@@ -12,8 +12,8 @@
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link text-muted"
-       href="{{ route('users.likes', ['name' => $user->name]) }}">
+    <a class="nav-link text-muted {{ $hasDeclarations ? 'active' : '' }}"
+       href="{{ route('users.declarations', ['name' => $user->name]) }}">
       宣言
     </a>
   </li>

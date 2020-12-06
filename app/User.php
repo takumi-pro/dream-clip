@@ -73,4 +73,8 @@ class User extends Authenticatable
     public function articles():HasMany{
         return $this->hasMany('App\Article');
     }
+
+    public function declarations():HasMany{
+        return $this->hasMany('App\Declaration');
+    }
 }

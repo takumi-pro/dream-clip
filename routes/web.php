@@ -30,16 +30,19 @@ Route::get('/tags/{name}','TagController@show')->name('tags.show');
 Route::prefix('users')->name('users.')->group(function(){
     Route::get('/{name}','UserController@show')->name('show');
     Route::get('/{name}/likes','UserController@likes')->name('likes');
+    Route::get('/{name}/declarations','UserController@declarations')->name('declarations');
     Route::get('/{name}/followings', 'UserController@followings')->name('followings');
     Route::get('/{name}/followers', 'UserController@followers')->name('followers');
-    //Route::get('/profedit','UserController@profeditForm')->name('profedit');
+    Route::get('/{name}/profedit','UserController@profeditForm')->name('profedit');
+    Route::patch('/{name}/profedit','UserController@profedit')->name('edit');
     Route::middleware('auth')->group(function(){
         Route::put('/{name}/follow','UserController@follow')->name('follow');
         Route::delete('/{name}/follow','UserController@unfollow')->name('unfollow');
     });
 });
 Route::get('/declaration','DeclarationController@show')->name('declaration');
-Route::get('/declaration/create','DeclarationController@create')->name('declaration.create');
-Route::post('/declaration/create','DeclarationController@store')->name('declaration.store');
-
-Route::get('/profedit','UserController@profeditForm')->name('profedit');
+Route::get('/declaration/create','DeclarationController@create')->name('declaration.create')->middleware('auth');
+Route::post('/declaration/create','DeclarationController@store')->name('declaration.store')->middleware('auth');
+Route::delete('/declaration/destroy','DeclarationController@destroy')->name('declaration.destroy')->middleware('auth');
+//Route::resource('/profedit','UserController')->only(['update'])->middleware('auth');
+//Route::get('/profedit','UserController@profeditForm')->name('profedit');
