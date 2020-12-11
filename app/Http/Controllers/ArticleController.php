@@ -14,8 +14,8 @@ class ArticleController extends Controller
         
         $articles = Article::all()->sortByDesc('created_at')->load('user','likes','tags');
         $eachTags = Tag::withCount('articles')->orderby('articles_count','desc')->take(5)->get();
-        $user = Auth::user();
-        return view('articles.index',['articles' => $articles,'eachTags' => $eachTags,'name' => $user->name]);
+        
+        return view('articles.index',['articles' => $articles,'eachTags' => $eachTags]);
     }
     public function create(){
         $allTagNames = Tag::all()->map(function ($tag){
