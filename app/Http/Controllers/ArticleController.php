@@ -12,7 +12,7 @@ class ArticleController extends Controller
 {
     public function index(){
         
-        $articles = Article::all()->sortByDesc('created_at');
+        $articles = Article::all()->sortByDesc('created_at')->load('user','likes','tags');
         $eachTags = Tag::withCount('articles')->orderby('articles_count','desc')->take(5)->get();
         $user = Auth::user();
         return view('articles.index',['articles' => $articles,'eachTags' => $eachTags,'name' => $user->name]);
