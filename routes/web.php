@@ -40,9 +40,4 @@ Route::prefix('users')->name('users.')->group(function(){
         Route::delete('/{name}/follow','UserController@unfollow')->name('unfollow');
     });
 });
-Route::get('/declaration','DeclarationController@show')->name('declaration');
-Route::get('/declaration/create','DeclarationController@create')->name('declaration.create')->middleware('auth');
-Route::post('/declaration/create','DeclarationController@store')->name('declaration.store')->middleware('auth');
-Route::delete('/declaration/destroy','DeclarationController@destroy')->name('declaration.destroy')->middleware('auth');
-//Route::resource('/profedit','UserController')->only(['update'])->middleware('auth');
-//Route::get('/profedit','UserController@profeditForm')->name('profedit');
+Route::resource('/declarations','DeclarationController');

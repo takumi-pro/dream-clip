@@ -2,10 +2,10 @@
       <div class="row mb-3">
         <div class="col-md-11 pull-right col-md-pull-1">
           <div class="btn-group m-0 w-100" role="group" aria-label="Basic example">
-            <a href="{{ route('declaration.create') }}" type="button" style="height:65px;font-size:16px;line-height:65px;" class="btn sunny-morning-gradient mb-3 m-0 w-100 p-0 text-white">
+            <a href="{{ route('declarations.create') }}" type="button" style="height:65px;font-size:16px;line-height:65px;" class="btn sunny-morning-gradient mb-3 m-0 w-100 p-0 text-white">
               宣言する<i class="fas fa-comment-dots ml-2"></i>
             </a>
-            <a href="{{ route('declaration') }}" type="button" style="height:65px;font-size:16px;line-height:65px;" class="btn sunny-morning-gradient mb-3 m-0 w-100 p-0 text-white">
+            <a href="{{ route('declarations.index') }}" type="button" style="height:65px;font-size:16px;line-height:65px;" class="btn sunny-morning-gradient mb-3 m-0 w-100 p-0 text-white">
               皆の宣言<i class="fas fa-comment-dots ml-2"></i>
             </a>
           </div>

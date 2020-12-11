@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ArticleRequest;
 
 class ArticleController extends Controller
@@ -13,8 +14,8 @@ class ArticleController extends Controller
         
         $articles = Article::all()->sortByDesc('created_at');
         $eachTags = Tag::withCount('articles')->orderby('articles_count','desc')->take(5)->get();
-
-        return view('articles.index',['articles' => $articles,'eachTags' => $eachTags]);
+        $user = Auth::user();
+        return view('articles.index',['articles' => $articles,'eachTags' => $eachTags,'name' => $user->name]);
     }
     public function create(){
         $allTagNames = Tag::all()->map(function ($tag){

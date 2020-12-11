@@ -14,21 +14,21 @@
             
 
         <div class="card mb-3">
-        <div class="card-body d-flex flex-row">
-        <a href="{{ route('users.show', ['name' => $declaration->user->name]) }}" class="text-dark">
+        <div class="card-body d-flex flex-row sunny-morning-gradient">
+          <a href="{{ route('users.show', ['name' => $declaration->user->name]) }}" class="text-dark">
             <i class="fas fa-user-circle fa-3x mr-1"></i>
             </a>
             <div>
             
             <div class="font-weight-bold">
             <a href="{{ route('users.show', ['name' => $declaration->user->name]) }}" class="text-dark">
-            {{ $declaration->user->name }}
+            {{ $declaration->user->name }}さんの宣言
             </a>
             </div>
             <div class="font-weight-lighter">{{ $declaration->created_at->format('Y/m/d H:i') }}</div>
             </div>
         </div>
-        <div class="card-body pt-0">
+        <div class="card-body">
             <h3 class="h4 card-title">
             <a class="text-dark d-block" href="">
                 {{ $declaration->title }}

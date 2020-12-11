@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', '宣言')
+@section('title', '宣言更新')
 
 @include('nav')
 
@@ -10,11 +10,12 @@
       <div class="col-12">
         <div class="card mt-3">
           <div class="card-body pt-0">
-            
+            @include('error_card_list')
             <div class="card-text">
-              <form method="POST" action="{{ route('declarations.store') }}">
+              <form method="POST" action="{{ route('declarations.update',['declaration' => $declaration]) }}">
+                @method('PATCH')
                 @include('declaration.form')
-                <button type="submit" class="text-white btn sunny-morning-gradient btn-block">宣言する</button>
+                <button type="submit" class="btn blue-gradient btn-block">更新する</button>
               </form>
             </div>
           </div>
