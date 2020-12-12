@@ -32,3 +32,7 @@ __URL : http://dream-clip.herokuapp.com/__
 ### バックエンド
 - Laravel 6.18.40
 - PHP 7.3.11
+### インフラ
+- mysql 5.7.26
+- Docker 19.03.12
+- docker-compose 1.27.2
