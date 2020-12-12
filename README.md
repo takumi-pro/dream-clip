@@ -22,3 +22,13 @@ __URL : http://dream-clip.herokuapp.com/__
 
 そういった境遇の人たちが仲間を作って、イキイキと自分の夢に向かって欲しいと思っています。<br><br>
 
+# 実際の画面
+![DreamClip](https://user-images.githubusercontent.com/65642316/101976075-1248a600-3c85-11eb-9fab-7f785f748e85.png)
+
+# 使用技術
+### フロントエンド
+- Vue.js 2.6.11
+- HTML/CSS/MDBootstrap
+### バックエンド
+- Laravel 6.18.40
+- PHP 7.3.11
